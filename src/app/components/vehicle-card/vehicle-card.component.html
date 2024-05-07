@@ -17,7 +17,7 @@
                       group-hover:opacity-30 transition duration-300"
         ></div>
         <div
-          class="absolute h-full w-full z-20 flex flex-col p-6 space-y-2
+          class="absolute h-full w-full z-40 flex flex-col p-6 space-y-2
           opacity-0 group-hover:opacity-100 transition duration-300"
         >
           <h1 class="text-3xl font-bold uppercase text-left">{{vehicle.name}}</h1>
@@ -38,11 +38,11 @@
 
           <div class="flex-grow flex flex-col justify-end">
             <div class='space-x-1'>
-              <button class='hover:bg-green-600 p-3 rounded-xl'>
-                  <!-- <Pencil size={32} /> -->
+              <button class='hover:bg-green-600 p-3 rounded-xl hover:bg-opacity-80 transition'>
+                  <img src="assets/icons/pencil.svg" alt="Edit" class="w-9 cursor-pointer" />
               </button>
-              <button class='hover:bg-green-600 p-3 rounded-xl'>
-                  <!-- <Trash size={32} /> -->
+              <button class='hover:bg-red-600 p-3 rounded-xl hover:bg-opacity-80 transition'>
+                <img src="assets/icons/trash.svg" alt="Delete" class="w-10" />
               </button>
 
           </div>
