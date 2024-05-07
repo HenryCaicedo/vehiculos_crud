@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-// import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -10,6 +12,7 @@ import { BodyComponent } from './components/body/body.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { VehicleGridComponent } from './components/vehicle-grid/vehicle-grid.component';
 import { VehicleCardComponent } from './components/vehicle-card/vehicle-card.component';
+import { ModalFormComponent } from './components/modal-form/modal-form.component';
 
 @NgModule({
   declarations: [
@@ -19,12 +22,15 @@ import { VehicleCardComponent } from './components/vehicle-card/vehicle-card.com
     BodyComponent,
     FooterComponent,
     VehicleGridComponent,
-    VehicleCardComponent
+    VehicleCardComponent,
+    ModalFormComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    // MatIconModule
+    MatButtonModule,
+    MatDialogModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

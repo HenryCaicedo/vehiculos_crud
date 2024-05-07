@@ -1,0 +1,75 @@
+<div class="px-4 py-6 bg-white rounded-lg shadow-lg">
+  <form class="flex flex-col space-y-4">
+    <div class="flex justify-between items-center">
+      <div class="text-2xl font-medium">{{title}}</div>
+      <hr />
+    </div>
+    <div class="">
+      <div class="flex gap-4 mt-6 justify-between">
+        <div class="flex flex-col grow">
+          <label for="input-name"
+            >Nombre<span class="text-red-500"> (obligatorio)</span></label
+          ><input
+            class="border-2 border-gray-300 px-2 py-1 rounded-lg w-full"
+            type="text"
+            name="input-name"
+            id="input-name"
+            [ngModel]="formFields.name"
+            (ngModelChange)="onNameChange($event)"
+          />
+        </div>
+        <div class="flex flex-col grow">
+          <label for="input-tags"
+            >Tags (sep. por comas)<span class="text-red-500"> (obligatorio)</span></label
+          ><input
+            class="border-2 border-gray-300 px-2 py-1 rounded-lg w-full"
+            type="text"
+            name="input-tags"
+            id="input-tags"
+            [ngModel]="formFields.tags"
+            (ngModelChange)="onTagsChange($event)"
+          />
+        </div>
+      </div>
+      <div class="flex gap-4 mt-6 justify-between">
+        <div class="flex flex-col grow">
+          <label for="input-description"
+            >Descripción <span class="text-red-500"> (obligatorio)</span></label
+          ><input
+            class="border-2 border-gray-300 px-2 py-1 rounded-lg w-full"
+            type="description"
+            name="input-description"
+            required
+            id="input-description"
+            [ngModel]="formFields.description"
+            (ngModelChange)="onDescriptionChange($event)"
+          />
+        </div>
+      </div>
+      <div class="flex gap-4 mt-6 justify-between">
+        <div class="flex flex-col grow">
+          <label for="input-img">URL de la imagen</label
+          ><input
+            class="border-2 border-gray-300 px-2 py-1 rounded-lg w-full"
+            type="text"
+            name="input-img"
+            id="input-img"
+            [ngModel]="formFields.img"
+            (ngModelChange)="onImgChange($event)"
+          />
+        </div>
+      </div>
+      <div class="flex text-center mt-6 gap-5 justify-center">
+        <button
+          (click)="onCancel()"
+          class="btn-secondary bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded"
+        >
+          Cancelar
+        </button>
+        <button (click)="onSubmit()" class="btn-primary btn-submit bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          Enviar
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Observable, Subscription } from 'rxjs';
 import { VehicleDTO } from 'src/app/models/vehicle.model';
 import { VehicleService } from 'src/app/services/vehicle.service';
+import { ModalFormComponent } from '../modal-form/modal-form.component';
 
 @Component({
   selector: 'app-vehicle-grid',
@@ -10,21 +12,30 @@ import { VehicleService } from 'src/app/services/vehicle.service';
 })
 export class VehicleGridComponent {
   private readonly vehicles$: Observable<VehicleDTO[]> =
-    this.VehicleService.getVehicles();
+    this.vehicleService.getVehicles();
   vehicles: VehicleDTO[] = [];
-  VehiclesSubscription?: Subscription;
+  vehiclesSubscription?: Subscription;
 
-  constructor(private readonly VehicleService: VehicleService) {}
+  constructor(private readonly vehicleService: VehicleService, private _matDialog: MatDialog) {}
 
   ngOnDestroy(): void {
-    this.VehiclesSubscription?.unsubscribe();
+    this.vehiclesSubscription?.unsubscribe();
   }
 
   ngOnInit(): void {
-    this.VehiclesSubscription = this.vehicles$.subscribe(
+    this.vehiclesSubscription = this.vehicles$.subscribe(
       (vehiclesDTO: VehicleDTO[]) => {
         this.vehicles = vehiclesDTO;
       }
     );
+  }
+
+  addVehicle(): void {
+    this._matDialog.open(ModalFormComponent, {
+      data: {
+        action: 'add',
+      },
+      width: '500px',
+    });
   }
 }

@@ -33,15 +33,15 @@
             </ul>
           </div>
           <div class="text-left">
-            <p class="font-semibold">{{vehicle.description}}</p>
+            <p class="text-base">{{vehicle.description}}</p>
           </div>
 
           <div class="flex-grow flex flex-col justify-end">
             <div class='space-x-1'>
-              <button class='hover:bg-green-600 p-3 rounded-xl hover:bg-opacity-80 transition'>
+              <button class='hover:bg-green-600 p-3 rounded-xl hover:bg-opacity-80 transition' (click)="editVehicle()">
                   <img src="assets/icons/pencil.svg" alt="Edit" class="w-9 cursor-pointer" />
               </button>
-              <button class='hover:bg-red-600 p-3 rounded-xl hover:bg-opacity-80 transition'>
+              <button class='hover:bg-red-600 p-3 rounded-xl hover:bg-opacity-80 transition' (click)="deleteVehicle()">
                 <img src="assets/icons/trash.svg" alt="Delete" class="w-10" />
               </button>
 
