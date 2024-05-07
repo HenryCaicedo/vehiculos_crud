@@ -1,0 +1,20 @@
+<div class="flex justify-center">
+  <div class="grid grid-cols-3 pt-32 p-20 gap-6 text-white">
+    <!-- {
+          vehiclesList.map((project, index) => (
+              <CarCard
+                  key={index}
+                  name={project.name}
+                  description={project.description}
+                  tags={project.tags}
+                  img={project.img}
+              />
+          ))
+      } -->
+    <ul *ngFor="let vehicle of vehicles; index as i">
+      <li>
+        <app-vehicle-card [vehicle]="vehicle"></app-vehicle-card>
+      </li>
+    </ul>
+  </div>
+</div>

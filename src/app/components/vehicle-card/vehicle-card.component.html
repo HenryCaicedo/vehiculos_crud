@@ -1,0 +1,71 @@
+<div
+  class="w-80 h-72 rounded-lg flex flex-col items-center justify-center
+                      hover:scale-105 transition ease-in-out duration-300 group
+
+                    hover:bg-white hover:bg-opacity-5 active:bg-opacity-10 overflow-hidden"
+>
+  <div class="relative w-full h-full items-center flex">
+    <div
+      class="absolute w-full h-full text-center justify-center flex z-20"
+    >
+      <div class="h-full w-full relative flex">
+        <div
+          class="absolute bg-gradient-to-t from-black/60 to-transparent h-full w-full z-0"
+        ></div>
+        <div
+          class="absolute bg-black h-full w-full z-10 opacity-0
+                      group-hover:opacity-30 transition duration-300"
+        ></div>
+        <div
+          class="absolute h-full w-full z-20 flex flex-col p-6 space-y-2
+          opacity-0 group-hover:opacity-100 transition duration-300"
+        >
+          <h1 class="text-3xl font-bold uppercase text-left">{{vehicle.name}}</h1>
+          <div class="w-full flex justify-start space-x-1 opacity-70">
+            <ul *ngFor="let tag of vehicle.tags; index as i">
+              <li>
+                <div
+                class="bg-white bg-opacity-80 rounded text-black font-medium px-2 py-1"
+              >
+                {{tag}}
+              </div>
+              </li>
+            </ul>
+          </div>
+          <div class="text-left">
+            <p class="font-semibold">{{vehicle.description}}</p>
+          </div>
+
+          <div class="flex-grow flex flex-col justify-end">
+            <div class='space-x-1'>
+              <button class='hover:bg-green-600 p-3 rounded-xl'>
+                  <!-- <Pencil size={32} /> -->
+              </button>
+              <button class='hover:bg-green-600 p-3 rounded-xl'>
+                  <!-- <Trash size={32} /> -->
+              </button>
+
+          </div>
+          </div>
+        </div>
+
+        <div
+          class="absolute h-full w-full flex items-end justify-start p-8 z-30"
+        >
+          <h1
+            class="text-left font-bold text-3xl group-hover:opacity-0 opacity-100 transition select-none"
+          >
+            {{vehicle.name}}
+          </h1>
+        </div>
+      </div>
+    </div>
+    <div class="absolute w-full h-full z-0">
+      <img
+        src="{{vehicle.img}}"
+        alt="Vehicle Image"
+        class="h-full w-full hover:scale-125 hover:blur-sm transition ease-in-out duration-300 z-0 object-cover"
+      />
+    </div>
+  </div>
+</div>
